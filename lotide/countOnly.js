@@ -9,12 +9,12 @@ const countOnly = function(allItems, itemsToCount) {
   const results = {};
   //let counter = 0;
 
-  for (const item of allItems) {
+  for (const item of allItems) {  //for each name in the list names
     //console.log(item);
-    if (itemsToCount[item]) {
-      if (results[item]) {
+    if (itemsToCount[item]) { //using bracket notation, for each name in the list, if the name is also on the names to find as true
+      if (results[item]) { //in the new results object, if the key (name) exists, increment that name by 1
         results[item] += 1;
-      } else {
+      } else {  //in the new results object, if the key does not exist, add it and make it 1
         results[item] = 1;
       }
     }
@@ -22,7 +22,7 @@ const countOnly = function(allItems, itemsToCount) {
   return results;
 }
 
-const firstNames = [
+const firstNames = [  //list of all names (allItems)
   "Karl",
   "Salima",
   "Agouhanna",
@@ -34,13 +34,15 @@ const firstNames = [
   "Joe"
 ];
 
-const result1 = countOnly(firstNames, 
+const result1 = countOnly(firstNames, //names to count, with true (itemsToCount)
   { 
     "Jason": true, 
     "Karima": true, 
     "Fang": true, 
     "Agouhanna": false 
   });
+
+//console.log(result1);
 
 console.log(assertEqual(result1["Jason"], 1));
 console.log(assertEqual(result1["Karima"], undefined));

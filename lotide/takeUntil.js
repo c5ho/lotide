@@ -21,15 +21,13 @@ const takeUntil = function(array, callback) {
   const results1 = [];
 
   for (let element of array) {
-    if (!callback(element)) {
-      results1.push(element);
-    } else {
+    if (callback(element)) {
       return results1;
-    }
+    } 
+    results1.push(element);
   }
   return results1;
 }
-
 
 const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
 const results1 = takeUntil(data1, x => x < 0);
