@@ -1,9 +1,8 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    return (`👍✅ Assertion Passed: ${actual} === ${expected}`);
-  }
-  return (`👎❌Assertion Failed: ${actual} !== ${expected}`);
-};
+const assertEqual =require('./assertEqual')
+
+const removeSpace = function(string) {
+  console.log(string.replace(/\s/g, ''));
+}
 
 const countLetters = function(string) {
   
@@ -21,8 +20,5 @@ const countLetters = function(string) {
   return letterCount;
 }
 
-const removeSpace = function(string) {
-  console.log(string.replace(/\s/g, ''));
-}
+module.exports = countLetters
 
-console.log(countLetters('lighthouse in the house'));
